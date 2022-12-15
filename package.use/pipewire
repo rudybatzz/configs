@@ -1,0 +1,3 @@
+#media-plugins/alsa-plugins pulseaudio
+media-video/pipewire sound-server
+media-sound/pulseaudio -daemon
