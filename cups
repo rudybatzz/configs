@@ -1,2 +1,0 @@
-app-text/ghostscript-gpl cups -X
-net-print/cups -X -usb
