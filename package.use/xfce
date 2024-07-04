@@ -1,3 +1,2 @@
 xfce-base/xfce4-meta minimal -cdr
-dev-libs/libdbusmenu gtk3
-app-crypt/gcr gtk 
+dev-libs/libdbusmenu gtk3 -gtk
