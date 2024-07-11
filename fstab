@@ -17,4 +17,4 @@
 
 /dev/sda1               none            swap            sw              0 0
 /dev/sda2               /               ext4            noatime         0 1
-/dev/sda3               /home           ext4            defaults        0 2
+#/dev/sda3               /home           ext4            defaults        0 2
