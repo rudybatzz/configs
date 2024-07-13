@@ -1,0 +1,63 @@
+# Installing Arch Linux.
+
+# Connect to WiFi.
+1. iwctl
+2. [iwd]# device list
+3. [iwd]# station wlan0 scan
+4. [iwd]# station wlan0 get-networks
+5. [iwd]# station wlan0 connect SSID 
+
+# Update the system clock.
+1. timedatectl set-timezone America/Los_Angeles
+
+# Partition the disk.
+1. cfdisk /dev/sda
+
+# Format the partitions.
+1. mkfs.ext4 /dev/sda2
+2. mkswap /dev/sda1
+
+# Mount the partitions.
+1. mount /dev/sda2 /mnt
+2. swapon /dev/sda1
+
+# Select the mirrors
+1. Uncomment preferred mirrors in /etc/pacman.d/mirrorlist 
+2. Enable parallel downloads in /etc/pacman.conf
+
+# Install essential packages
+1. pacstrap -K /mnt base linux linux-firmware networkmanager grub base-devel
+
+# Configure the system
+1. genfstab -U /mnt >> /mnt/etc/fstab
+
+# Chroot
+1. arch-chroot /mnt
+
+# Set time.
+1. ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+2. hwclock --systohc
+
+# Localization.
+1. edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
+2. locale-gen
+
+# Create the locale.conf.
+1. add LANG=en_US.UTF-8
+
+# Network configuration and set Hostname.
+1. create /etc/hostname
+2. set hostname to your preference
+
+# Root password
+1. passwd
+
+# Boot loader (GRUB)
+1. grub-install --target=i386-pc /dev/sda
+2. chmod -x /etc/grub.d/30_os-prober 30_uefi-firmware
+3. grub-mkconfig -o /boot/grub/grub.cfg
+
+# Additional final steps
+1. useradd -m -G wheel,video,audio -s rudy
+2. passwd rudy 
+3. systemctl enable NetworkManager
