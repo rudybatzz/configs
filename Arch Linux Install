@@ -26,7 +26,7 @@
 2. Enable parallel downloads in /etc/pacman.conf
 
 # Install essential packages
-1. pacstrap -K /mnt base linux linux-firmware networkmanager grub base-devel
+1. pacstrap -K /mnt base linux linux-firmware base-devel
 
 # Configure the system
 1. genfstab -U /mnt >> /mnt/etc/fstab
@@ -49,15 +49,17 @@
 1. create /etc/hostname
 2. set hostname to your preference
 
-# Root password
+# Root password.
 1. passwd
 
-# Boot loader (GRUB)
-1. grub-install --target=i386-pc /dev/sda
-2. chmod -x /etc/grub.d/30_os-prober 30_uefi-firmware
-3. grub-mkconfig -o /boot/grub/grub.cfg
+# Boot loader (GRUB).
+1. pacman -S grub sudo networkmanager
+2. grub-install --target=i386-pc /dev/sda
+3. chmod -x /etc/grub.d/30_os-prober 30_uefi-firmware
+4. grub-mkconfig -o /boot/grub/grub.cfg
+5. systemctl enable NetworkManager
 
-# Additional final steps
+# Final steps.
 1. useradd -m -G wheel,video,audio -s /bin/bash rudy
 2. passwd rudy 
-3. systemctl enable NetworkManager
+
