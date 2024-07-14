@@ -58,6 +58,6 @@
 3. grub-mkconfig -o /boot/grub/grub.cfg
 
 # Additional final steps
-1. useradd -m -G wheel,video,audio -s rudy
+1. useradd -m -G wheel,video,audio -s /bin/bash rudy
 2. passwd rudy 
 3. systemctl enable NetworkManager
