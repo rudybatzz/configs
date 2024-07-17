@@ -62,7 +62,8 @@
 2. emerge -av1 dev-lang/rust-bin 
 3. emerge -avg1 --quiet-build sys-devel/llvm
 4. move doas.conf to /etc
-5. emerge -av --quiet-build linux-firmware gentoo-kernel-bin
+5. (OpenRC Only) chown -c root:root /etc/doas.conf afterwards chmod -c 0400 /etc/doas.conf
+6. emerge -av --quiet-build linux-firmware gentoo-kernel-bin
 
 #  Using systemd as the system and service manager.
 1. ln -sf ../usr/share/zoneinfo/America/Los_Angeles /etc/localtime
