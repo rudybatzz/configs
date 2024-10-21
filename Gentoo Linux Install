@@ -108,6 +108,10 @@
 3. useradd -m -G users,wheel,video -s /bin/bash rudy
 4. passwd rudy
 
+# Extra Step (OpenRC Only)
+1. clear >> /etc/issue
+2. Open /etc/issue and move escape sequence from the very bottom of file and move it to the top to be first line.
+
 # Rebooting system.
 1. exit
 2. cd
