@@ -55,7 +55,7 @@
 
 # Choosing the right profile.
 1. eselect profile list
-2. eselect profile set (choose preferred profile)
+2. eselect profile set (choose preferred profile) or eselect profile list | less
 
 # Install optional applications.
 1. emerge -av app-admin/doas
