@@ -78,8 +78,10 @@
 # Install optional applications.
 1. emerge -av app-admin/doas
 2. emerge -av1 dev-lang/rust-bin 
-3. emerge -avg1 --quiet-build=y llvm-core/llvm
-4. emerge -av --quiet-build=y linux-firmware gentoo-kernel-bin
+3. emerge -avg1 --quiet-build=y llvm-core/llvm  (binary package)
+4. emerge -avg1 --quiet-build=y dev-lang/cmake  (binary package)
+5. emerge -avg1 --quiet-build=y sys-devel/gcc   (binary package only if theres an update during install)
+6. emerge -av --quiet-build=y linux-firmware gentoo-kernel-bin
 
 
 #  Set timezone. (OpenRC or systemd)
@@ -154,7 +156,7 @@
 # xfce install (Optional)
 1. emerge -av --quiet-build=y x11-base/xorg-server
 2. env-update and then source /etc/profile 
-3. emerge -av --quiet-build=y xfce-extra/xfce4-notifyd
+3. emerge -av1 --quiet-build=y xfce-extra/xfce4-notifyd
 4. emerge -av --quiet-build=y xfce-base/xfce4-meta
 5. reboot and Log in as normal user
 6. create file .xinitrc and add exec startxfce4 then save and quit and after use startx command
