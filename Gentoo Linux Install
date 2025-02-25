@@ -78,9 +78,9 @@
 # Install optional applications.
 1. emerge -av app-admin/doas
 2. emerge -av1 dev-lang/rust-bin 
-3. emerge -avg1 --quiet-build=y llvm-core/llvm  (binary package)
-4. emerge -avg1 --quiet-build=y dev-lang/cmake  (binary package)
-5. emerge -avg1 --quiet-build=y sys-devel/gcc   (binary package only if theres an update during install)
+3. emerge -avg1 llvm-core/llvm  (binary package)
+4. emerge -avg1 dev-build/cmake  (binary package)
+5. emerge -avg1 sys-devel/gcc   (binary package only if theres an update during install)
 6. emerge -av --quiet-build=y linux-firmware gentoo-kernel-bin
 
 
