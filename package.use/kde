@@ -1,0 +1,3 @@
+kde-plasma/plasma-meta -crash-handler -firewall -kwallet -crypt -smart
+dev-qt/qtbase cups gtk
+media-video/vlc -vaapi
